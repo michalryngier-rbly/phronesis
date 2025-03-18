@@ -7,14 +7,19 @@ import {TRAININGS} from "@/pages/index";
     <v-col
       v-for="training in TRAININGS"
       :key="training.id"
-      cols="3"
+      cols="4"
+      class="align-content-lg-space-between"
     >
       <v-card
-        height="150"
+        height="200"
         color="primary"
+        class="d-flex flex-column"
       >
         <v-card-title>{{ training.title }}</v-card-title>
         <v-card-text>{{ training.description }}</v-card-text>
+
+        <v-spacer />
+
         <v-card-actions>
           <v-btn
             :to="training.route"
@@ -27,3 +32,7 @@ import {TRAININGS} from "@/pages/index";
     </v-col>
   </v-row>
 </template>
+
+<style lang="scss">
+
+</style>
