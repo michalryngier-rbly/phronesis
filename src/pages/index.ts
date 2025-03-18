@@ -1,5 +1,17 @@
 export const TRAININGS = [
   {
+    id: 1,
+    title: 'Phronesis training #1 (catch up)',
+    description: 'Implementation of catch up Phronesis training #1 - Create a test environment',
+    route: 'training-1',
+  },
+  {
+    id: 2,
+    title: 'Phronesis training #2 (catch up)',
+    description: 'Implementation of catch up Phronesis training #2 - Pay an invoice',
+    route: 'training-2',
+  },
+  {
     id: 31,
     title: 'Phronesis training #31',
     description: 'Implementation of Phronesis training #31 - Orders Early Access',
