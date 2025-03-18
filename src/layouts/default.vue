@@ -1,5 +1,26 @@
 <script lang="ts" setup>
-//
+const route = useRoute();
+
+const breadcrumbs = computed(() => {
+  const pathSegments = route.path.split("/").filter(Boolean);
+  let pathAccumulator = "";
+
+  return [
+    {title: "Home", href: "/", disabled: route.path === "/"},
+
+    ...pathSegments.map((segment, index) => {
+      const segmentTitle = segment.replace('-', ' ');
+      pathAccumulator += `/${segment}`;
+
+      return {
+        title: segmentTitle.charAt(0).toUpperCase() + segmentTitle.slice(1),
+        href: pathAccumulator,
+        disabled: index === pathSegments.length - 1,
+      };
+    }),
+  ]
+});
+
 </script>
 
 <template>
@@ -16,6 +37,11 @@
     </v-app-bar>
 
     <v-main>
+      <v-breadcrumbs
+        :items="breadcrumbs"
+        divider="/"
+      />
+
       <v-container>
         <RouterView />
       </v-container>
