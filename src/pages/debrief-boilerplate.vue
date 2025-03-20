@@ -12,14 +12,14 @@
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Title
     </h2>
     <p class="mb-4">
       Feature X Usability Test
     </p>
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Description
     </h2>
     <p class="mb-4">
@@ -28,7 +28,7 @@
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Screenshots
     </h2>
 
@@ -46,13 +46,13 @@
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Code blocks
     </h2>
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Bugs Found
     </h2>
 
@@ -87,7 +87,7 @@
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Confusing Things
     </h2>
     <v-list>
@@ -112,7 +112,7 @@
 
     <v-divider class="mb-4" />
 
-    <h2 class="text-h5 font-weight-medium">
+    <h2 class="font-weight-medium">
       Additional Notes
     </h2>
     <p>- Some users struggled with the new button placement.</p>
