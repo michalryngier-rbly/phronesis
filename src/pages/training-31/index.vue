@@ -408,7 +408,7 @@
     <v-divider class="my-4" />
 
     <h2 class="font-weight-medium">
-      Confusing Things (1)
+      Confusing Things (3)
     </h2>
 
     <v-list>
