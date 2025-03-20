@@ -23,7 +23,7 @@
       Description
     </h2>
     <p>
-      Your boss wants you to evalute Rebilly's invoicing system for their product offerings. For this task, create and
+      Your boss wants you to evaluate Rebilly's invoicing system for their product offerings. For this task, create and
       pay an invoice for each type of product. Pay invoices using the Rebilly back office, as well as via a payment link
       that could be displayed to an end user.
     </p>
@@ -38,7 +38,8 @@
       <v-col cols="12">
         <h3>Our new products</h3>
         <p>
-          <a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/products">Our new products</a>, created according to the requirements
+          <a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/products">Our new products</a>, created
+          according to the requirements
         </p>
       </v-col>
     </v-row>
@@ -79,29 +80,21 @@
             </v-list-item-icon>
             <a
               href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/invoices/in_01JPMRH7SEVBPFS10PEC0B59N6"
-            >Invoice #2</a> for 3 hours of Consulting Services
+            >Invoice #3</a> for 3 hours of Consulting Services
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon color="primary">
+                mdi-invoice-list-outline
+              </v-icon>
+            </v-list-item-icon>
+            <a
+              href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/invoices/in_01JPSTJEE6WEXQQX02K7N8VRSZ"
+            >Invoice #4</a> for 10 hours of Consulting Services (payed by a payment link)
           </v-list-item>
         </v-list>
       </v-col>
     </v-row>
-
-    <v-divider class="my-4" />
-
-    <h2 class="text-h5 font-weight-medium">
-      Confusing Things
-    </h2>
-    <v-list>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon color="orange">
-            mdi-alert-circle
-          </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          Non recurring product plans visible for recurring order.
-          TODO: add screenshot
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
   </v-container>
 </template>
