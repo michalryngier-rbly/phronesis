@@ -302,9 +302,7 @@
           </v-list>
         </v-list-item-content>
       </v-list-item>
-    </v-list>
 
-    <v-list>
       <v-list-item class="mb-4">
         <v-list-item-icon>
           <v-icon color="red">
@@ -378,7 +376,13 @@
 
             <v-list-item>
               <v-list-item-content>
-                2. Update the
+                3. Update the quantity for the activation fee using <v-icon>mdi-pencil</v-icon>.
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                4. Click on the Quantity value of the invoice Setup fee unit
               </v-list-item-content>
             </v-list-item>
 
@@ -400,6 +404,7 @@
       </v-list-item>
     </v-list>
 
+
     <v-divider class="my-4" />
 
     <h2 class="font-weight-medium">
@@ -407,6 +412,28 @@
     </h2>
 
     <v-list>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon color="orange">
+            mdi-alert-circle
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          Setup fee for metered billing quantity can be updated. Shouldn't it be set to 1 by default?
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon color="orange">
+            mdi-alert-circle
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          Invoice for metered billing has only setup fee position. Shouldn't it have 2 positions - setup fee and actual pricing plan?
+        </v-list-item-content>
+      </v-list-item>
+
       <v-list-item>
         <v-list-item-icon>
           <v-icon color="orange">
