@@ -175,14 +175,20 @@
 
         <v-img
           src="@/assets/trainings/3/metered-billing/error.png"
-          class="rounded-lg elevation-4 mt-1"
+          class="rounded-lg elevation-4 my-1"
+        />
+        However, trying to pay it the next day worked. The upcoming invoice shows the correct amount (min 1 item at $10)
+
+        <v-img
+          src="@/assets/trainings/3/metered-billing/upcoming-invoice.png"
+          class="rounded-lg elevation-4 my-1"
         />
       </v-col>
     </v-row>
 
     <v-row class="my-2">
       <v-col cols="3">
-        <h3>4.b. Create an order with a metered billing plan subscription: TODO: pay without activation fee</h3>
+        <h3>4.b. Create an order with a metered billing plan subscription (pay without activation fee):</h3>
         <p>
           Check order details including item<br>
           <a
@@ -194,7 +200,7 @@
         </p>
 
         <v-img
-          src="@/assets/trainings/3/metered-billing/order.png"
+          src="@/assets/trainings/3/metered-billing/order-zero-setup.png"
           class="rounded-lg elevation-4 mt-1"
         />
       </v-col>
@@ -208,22 +214,36 @@
 
         <v-img
           src="@/assets/trainings/3/metered-billing/error.png"
-          class="rounded-lg elevation-4 mt-1"
+          class="rounded-lg elevation-4 my-1"
+        />
+        However, trying to pay it the next day worked. The upcoming invoice shows the correct amount (min 1 item at $10)
+
+        <v-img
+          src="@/assets/trainings/3/metered-billing/upcoming-invoice-zero-setup.png"
+          class="rounded-lg elevation-4 my-1"
         />
       </v-col>
     </v-row>
 
     <v-row class="my-2">
       <v-col cols="3">
-        <h3>5. Create an order with a subscription that has a plan override TODO: make this order</h3>
+        <h3>5. Create an order with a subscription that has a plan override</h3>
         <p>
           Check order details including item<br>
           <a
-            href=""
+            href="https://jh-recomm-orders-feature-branch.d2lwxktxnpxork.amplifyapp.com/phronesis-lucky-clover-casino/invoices/in_01JPWD7KK4X4F8V9N624J80HMQ"
           >New order</a> - contains a subscription that has a plan override.
           <v-icon color="success">
             mdi-check
           </v-icon>
+
+          <v-img
+            src="@/assets/trainings/3/plan-override/order.png"
+            class="rounded-lg elevation-4 my-1"
+          />
+        </p>
+        <p>
+          One confusing thing that we noticed is that there is a setup fee per item, and we're not sure if it's supposed to be per item or just a single charge.
         </p>
 
         <!--        <v-img-->
@@ -234,22 +254,22 @@
 
       <v-col cols="3">
         <h3>Activate an order and check the invoice, and upcoming invoice</h3>
-        After paying the invoice ...
+        After paying the invoice the upcoming invoice shows 3 times item we subscribed for (correct overridden price)
         <v-icon color="success">
           mdi-check
         </v-icon>
 
-        <!--        <v-img-->
-        <!--          src="@/assets/trainings/3/plan-override/upcoming-invoice.png"-->
-        <!--          class="rounded-lg elevation-4 mt-1"-->
-        <!--        />-->
+        <v-img
+          src="@/assets/trainings/3/plan-override/upcoming-invoice.png"
+          class="rounded-lg elevation-4 mt-1"
+        />
       </v-col>
     </v-row>
 
     <v-divider class="mb-4" />
 
     <h2 class="font-weight-medium">
-      Bugs Found (3)
+      Bugs Found (4)
     </h2>
 
     <v-list>
@@ -402,13 +422,69 @@
           </v-list>
         </v-list-item-content>
       </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon color="red">
+            mdi-bug
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          Cannot pay invoice early.
+          <v-list
+            class="border-lg my-2"
+          >
+            <v-list-item>
+              <v-list-item-title>
+                <strong>Steps to reproduce:</strong>
+              </v-list-item-title>
+            </v-list-item>
+
+            <v-list-item>
+              1. Create an order with recurring billing.
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                2. Activate the subscription by paying the first invoice.
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                3. Look up incoming invoice for that order.
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                4. Try to pay it early and choose any due date option.
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                <strong>Result:</strong> Cannot pay an upcoming invoice early.<br>
+                <strong>Expected result:</strong> There must be a possibility to pay an upcoming invoice early.
+              </v-list-item-content>
+              <v-list-item-media>
+                <v-img
+                  src="@/assets/trainings/3/bugs/cannot-early-pay.png"
+                  class="rounded-lg elevation-4 mt-1"
+                  max-width="25%"
+                />
+              </v-list-item-media>
+            </v-list-item>
+          </v-list>
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
 
 
     <v-divider class="my-4" />
 
     <h2 class="font-weight-medium">
-      Confusing Things (3)
+      Confusing Things (4)
     </h2>
 
     <v-list>
@@ -449,6 +525,22 @@
           />
         </v-list-item-content>
       </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon color="orange">
+            mdi-alert-circle
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          Overriding a basic membership plan by adding setup fee and changing fixed fee to flat rate charges the setup fee times the number of items. Is this intended?
+          <v-img
+            src="@/assets/trainings/3/confusing/override-setup-fee.png"
+            class="rounded-lg elevation-4 mt-1"
+            max-width="25%"
+          />
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
 
     <v-divider class="mb-4" />
@@ -456,6 +548,8 @@
     <h2 class="font-weight-medium">
       Additional Notes
     </h2>
-    <p>- ...</p>
+    <h3>What made you smile?</h3>
+    <p>Experimenting with the system, learning how stuff works, speculating about possible intended use cases</p>
+    <p>Michal set everything up very quickly :)</p>
   </v-container>
 </template>
