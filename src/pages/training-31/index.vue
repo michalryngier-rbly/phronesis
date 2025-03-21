@@ -280,7 +280,10 @@
           </v-icon>
         </v-list-item-icon>
         <v-list-item-content>
-          Creating an order for a metered billing with a setup fee and trying to pay it results in error.
+          Creating an order for a metered billing with or without a setup fee and trying to pay it results in error.
+          <strong class="text-success">
+            It seems to be fixed as we could not replicate it the next day
+          </strong>
           <v-list
             class="border-lg my-2"
           >
@@ -291,7 +294,7 @@
             </v-list-item>
 
             <v-list-item>
-              1. Create a metered billing plan with a setup fee.
+              1. Create a metered billing plan with/without a setup fee.
             </v-list-item>
 
             <v-list-item>
@@ -551,5 +554,6 @@
     <h3>What made you smile?</h3>
     <p>Experimenting with the system, learning how stuff works, speculating about possible intended use cases</p>
     <p>Michal set everything up very quickly :)</p>
+    <p>Anton is a great training partner and moves very quickly through the documentation and finds things we need easily :)</p>
   </v-container>
 </template>
