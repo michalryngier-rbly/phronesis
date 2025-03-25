@@ -33,8 +33,12 @@ import PhronesisCard from "@/components/phronesis-card.vue";
         <phronesis-card
           confusing
         >
-          Adding permissions is not user friendly. Having to copy-paste them from the documentation is hard, there is no
-          way to search for them (browser's search does not see the textarea content), textarea cannot be expanded.
+          <ul class="ml-3">
+            <li>Adding permissions is not user friendly.</li>
+            <li>Having to copy-paste them from the documentation is hard.</li>
+            <li>There is no way to search for them (browser's search does not see the textarea content).</li>
+            <li>Textarea cannot be expanded.</li>
+          </ul>
         </phronesis-card>
       </v-col>
 
