@@ -136,6 +136,14 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           />
         </phronesis-card>
       </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+        >
+          We couldn't create KYC request documents with KYC agent
+        </phronesis-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
