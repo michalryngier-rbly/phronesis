@@ -4,6 +4,7 @@ import Pill from "@/components/pill.vue";
 defineProps<{
   confusing?: boolean
   issue?: boolean
+  completed?: boolean
   title?: string
 }>()
 </script>
@@ -14,7 +15,7 @@ defineProps<{
     rounded
   >
     <v-card-title
-      v-if="confusing || issue || title"
+      v-if="confusing || issue || completed || title"
       class="d-flex mb-2 bg-grey-lighten-4"
     >
       {{ title ?? '' }}
@@ -33,6 +34,14 @@ defineProps<{
         icon="mdi-bug"
       >
         Issue
+      </pill>
+
+      <pill
+        v-if="completed"
+        bg-color="success"
+        icon="mdi-check"
+      >
+        Completed
       </pill>
     </v-card-title>
     <v-card-text class="d-flex flex-column align-content-center">

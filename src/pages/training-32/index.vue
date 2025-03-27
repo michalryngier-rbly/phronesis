@@ -32,7 +32,19 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       <v-col cols="12">
         <phronesis-card title="What made you smile? :)">
           <ul class="ml-3">
-            <li>...</li>
+            <li>It was fun to explore different corners of the system and investigate why something did not work, even though we had permissions :)</li>
+          </ul>
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          completed
+        >
+          <ul class="ml-3">
+            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/users/roles/update/role_01JQ6PVZ0BGWCX7FP018XRZHCR">Support agent role</a></li>
+            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/users/roles/update/role_01JQBVVQNJDNXDRVAEWZBY1NDE">KYC support role</a></li>
+            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/users/roles/update/role_01JQBW4966P1HSM7392MTN7B6S">Billing support role</a></li>
           </ul>
         </phronesis-card>
       </v-col>
@@ -148,8 +160,63 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       <v-col cols="12">
         <phronesis-card
           confusing
+          issue
         >
-          We couldn't create KYC request documents with KYC agent but had that option visible.
+          KYC agent had an option to create a KYC request for a customer but it was not possible to create it, even though there was no permission for that.
+          <v-img
+            src="@/assets/trainings/32/confusing/kyc-request.png"
+            class="rounded-lg elevation-2 mt-2"
+            max-width="30%"
+          />
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+        >
+          Merging two roles into one is not possible without specifying at least one additional permission explicitly.
+          <v-img
+            src="@/assets/trainings/32/confusing/permission-required.png"
+            class="rounded-lg elevation-2 mt-2"
+            max-width="30%"
+          />
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+          issue
+        >
+          <code>GetDeclinedTransactionsReport</code> is not a valid permission, even though it is <a href="https://www.rebilly.com/docs/settings/user-permissions#reports">listed in the documentation</a>.
+          <v-img
+            src="@/assets/trainings/32/confusing/permission-required.png"
+            class="rounded-lg elevation-2 mt-2"
+            max-width="30%"
+          />
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+          issue
+        >
+          Adding whitespace in a row with a permission invalidates it.
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+        >
+          It is not possible to use a blank line as a separator for permissions.
+          <v-img
+            src="@/assets/trainings/32/confusing/line-break-forbidden.png"
+            class="rounded-lg elevation-2 mt-2"
+            max-width="30%"
+          />
         </phronesis-card>
       </v-col>
     </v-row>
