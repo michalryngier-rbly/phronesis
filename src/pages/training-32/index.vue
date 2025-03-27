@@ -118,23 +118,23 @@ import PhronesisCard from "@/components/phronesis-card.vue";
             />
           </div>
         </phronesis-card>
+      </v-col>
 
-        <v-col cols="12">
-          <phronesis-card
-            confusing
-          >
-            We couldn't access creating billing portal link despite having all permissions related to the billing portal
-            link. We needed to check the network tab to see that we need
-            <code class="bg-grey-lighten-3">PostAuthenticationToken</code>
-            permission.
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+        >
+          We couldn't access creating billing portal link despite having all permissions related to the billing portal
+          link. We needed to check the network tab to see that we need
+          <code class="bg-grey-lighten-3">PostAuthenticationToken</code>
+          permission.
 
-            <v-img
-              src="@/assets/trainings/32/confusing/create-billing-portal-link.gif"
-              class="rounded-lg elevation-2 mt-2"
-              max-width="30%"
-            />
-          </phronesis-card>
-        </v-col>
+          <v-img
+            src="@/assets/trainings/32/confusing/create-billing-portal-link.gif"
+            class="rounded-lg elevation-2 mt-2"
+            max-width="30%"
+          />
+        </phronesis-card>
       </v-col>
     </v-row>
   </v-container>
