@@ -4,6 +4,7 @@ import Pill from "@/components/pill.vue";
 defineProps<{
   confusing?: boolean
   issue?: boolean
+  title?: string
 }>()
 </script>
 
@@ -13,9 +14,11 @@ defineProps<{
     rounded
   >
     <v-card-title
-      v-if="confusing || issue"
+      v-if="confusing || issue || title"
       class="d-flex mb-2 bg-grey-lighten-4"
     >
+      {{ title ?? '' }}
+
       <pill
         v-if="confusing"
         bg-color="warning"

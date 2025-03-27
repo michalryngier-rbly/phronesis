@@ -30,6 +30,14 @@ import PhronesisCard from "@/components/phronesis-card.vue";
 
     <v-row>
       <v-col cols="12">
+        <phronesis-card title="What made you smile? :)">
+          <ul class="ml-3">
+            <li>...</li>
+          </ul>
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
         <phronesis-card
           confusing
         >
