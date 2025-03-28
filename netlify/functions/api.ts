@@ -22,7 +22,7 @@ export default async (req: Request, context: Context) => {
 
   const data = {
     mode: "passwordless",
-    CUSTOMER_ID,
+    customerId: CUSTOMER_ID,
   };
 
   const { fields: login } = await rebilly.customerAuthentication.login({
