@@ -18,8 +18,6 @@ defineProps<{
       v-if="confusing || issue || completed || title"
       class="d-flex mb-2 bg-grey-lighten-4"
     >
-      {{ title ?? '' }}
-
       <pill
         v-if="confusing"
         bg-color="warning"
@@ -43,6 +41,10 @@ defineProps<{
       >
         Completed
       </pill>
+
+      <div class="ml-2">
+        {{ title ?? '' }}
+      </div>
     </v-card-title>
     <v-card-text class="d-flex flex-column align-content-center">
       <div class="text-body-1">

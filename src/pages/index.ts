@@ -12,6 +12,12 @@ export const TRAININGS = [
     route: 'training-2',
   },
   {
+    id: 32,
+    title: 'Phronesis training #2 (new) (catch up)',
+    description: 'Implementation of Phronesis training #2 - Create invoice retry',
+    route: 'training-2-new',
+  },
+  {
     id: 31,
     title: 'Phronesis training #31',
     description: 'Implementation of Phronesis training #31 - Orders Early Access',
