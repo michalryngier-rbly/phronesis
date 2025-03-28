@@ -29,6 +29,12 @@ import RebillyInstruments from '@rebilly/instruments';
 })();
 </script>
 
+<style>
+.rebilly-instruments-button {
+  background-color: #008F39;
+}
+</style>
+
 <template>
   <div id="app">
     <div class="rebilly-instruments-summary"></div>

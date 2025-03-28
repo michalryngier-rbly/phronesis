@@ -26,8 +26,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       Description
     </h2>
     <p>
-      <a href="https://team.rebilly.dev/phronesis-training/projects/create-invoice-retry">Project 2: Create invoice
-        retry</a>
+      <a href="https://team.rebilly.dev/phronesis-training/projects/casino-deposit-page">Project 11: Casino deposit page</a>
     </p>
 
     <v-divider class="mb-4 mt-4" />
@@ -46,11 +45,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
         <phronesis-card
           completed
         >
-          <ul class="ml-3">
-            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/notifications/events/transaction-declined/bind/4">Email notification</a></li>
-            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/rules/billing/renewal-invoice-payment-declined/rule/4">Billing rule for scheduling a retry</a></li>
-            <li><a href="https://app-sandbox.rebilly.com/phronesis-lucky-clover-casino/orders/ord_01JQEEB5NJBQS9EX3F7JSV9BB8/upcoming-invoice">Order with retried payments</a></li>
-          </ul>
+          <a href="/training-11/demo">Link to demo</a>
         </phronesis-card>
       </v-col>
 
