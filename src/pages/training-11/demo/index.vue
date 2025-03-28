@@ -33,10 +33,23 @@ import RebillyInstruments from '@rebilly/instruments';
 .rebilly-instruments-button {
   background: #008F39;
 }
+
+.header {
+  background: #4A2E00 !important;
+  color: #FFD700 !important;
+  padding: 10px;
+}
+
+.body {
+  background: #008F39 !important;
+  color: #FFD700 !important;
+  padding: 10px;
+  height: 100%;
+}
 </style>
 
 <template>
-  <v-app-bar>
+  <v-app-bar class="header">
     <v-toolbar-title>Lucky Clover Casino</v-toolbar-title>
   </v-app-bar>
   <v-container>
