@@ -1,0 +1,89 @@
+import type { Context } from "@netlify/functions";
+
+import RebillyAPI from "rebilly-js-sdk";
+
+const REBILLY_API_SECRET_KEY = "sk_sandbox_lNFYj-AUBEko3QZ-s4XSaUMwPUMQiXfJ4fs8vE3";
+const REBILLY_WEBSITE_ID = "www.luckyclovercasino.com";
+const REBILLY_ORGANIZATION_ID = "phronesis-lucky-clover-casino";
+const CUSTOMER_ID = "cus_01JPMQYSZZV8X6SQCWS27D3KCX";
+
+const rebilly = RebillyAPI({
+  sandbox: true,
+  organizationId: REBILLY_ORGANIZATION_ID,
+  apiKey: REBILLY_API_SECRET_KEY,
+  timeout: 10000,
+});
+
+export default async (req: Request, context: Context) => {
+  const response: {
+    token?: string,
+    depositRequestId?: string
+  } = {};
+
+  const data = {
+    mode: "passwordless",
+    CUSTOMER_ID,
+  };
+
+  const { fields: login } = await rebilly.customerAuthentication.login({
+    data,
+  });
+
+  const { fields: exchangeToken } =
+    await rebilly.customerAuthentication.exchangeToken({
+      token: login.token,
+      data: {
+        acl: [
+          {
+            scope: {
+              organizationId: [REBILLY_ORGANIZATION_ID],
+            },
+            permissions: [
+              "PostToken",
+              "PostDigitalWalletValidation",
+              "StorefrontGetAccount",
+              "StorefrontPatchAccount",
+              "StorefrontPostPayment",
+              "StorefrontGetTransactionCollection",
+              "StorefrontGetTransaction",
+              "StorefrontGetPaymentInstrumentCollection",
+              "StorefrontPostPaymentInstrument",
+              "StorefrontGetPaymentInstrument",
+              "StorefrontPatchPaymentInstrument",
+              "StorefrontPostPaymentInstrumentDeactivation",
+              "StorefrontGetWebsite",
+              "StorefrontGetInvoiceCollection",
+              "StorefrontGetInvoice",
+              "StorefrontGetProductCollection",
+              "StorefrontGetProduct",
+              "StorefrontPostReadyToPay",
+              "StorefrontGetPaymentInstrumentSetup",
+              "StorefrontPostPaymentInstrumentSetup",
+              "StorefrontGetDepositRequest",
+              "StorefrontGetDepositStrategy",
+              "StorefrontPostDeposit",
+            ],
+          },
+        ],
+        customClaims: {
+          websiteId: REBILLY_WEBSITE_ID,
+        },
+      },
+    });
+
+  const requestDepositData = {
+    websiteId: REBILLY_WEBSITE_ID,
+    CUSTOMER_ID,
+    currency: "USD",
+    amounts: [50, 100],
+  };
+
+  const { fields: depositFields } = await rebilly.depositRequests.create({
+    data: requestDepositData,
+  });
+
+  response.token = exchangeToken.token;
+  response.depositRequestId = depositFields.id;
+
+  return new Response(JSON.stringify(response))
+}

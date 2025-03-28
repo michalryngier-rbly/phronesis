@@ -7,8 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     PhronesisCard: typeof import('./components/phronesis-card.vue')['default']
     Pill: typeof import('./components/pill.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
