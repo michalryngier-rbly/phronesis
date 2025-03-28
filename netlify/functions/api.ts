@@ -76,6 +76,7 @@ export default async (req: Request, context: Context) => {
     websiteId: REBILLY_WEBSITE_ID,
     customerId: CUSTOMER_ID,
     strategyId: DEPOSIT_STRATEGY_ID,
+    currency: "USD",
   };
 
   const { fields: depositFields } = await rebilly.depositRequests.create({
