@@ -31,13 +31,22 @@ import RebillyInstruments from '@rebilly/instruments';
 
 <style>
 .rebilly-instruments-button {
-  background-color: #008F39;
+  background: #008F39;
 }
 </style>
 
 <template>
-  <div id="app">
-    <div class="rebilly-instruments-summary"></div>
-    <div class="rebilly-instruments"></div>
-  </div>
+  <v-app-bar>
+    <v-toolbar-title>Lucky Clover Casino</v-toolbar-title>
+  </v-app-bar>
+  <v-container>
+    <v-row>
+      <v-col>
+        <div id="app">
+          <div class="rebilly-instruments-summary"></div>
+          <div class="rebilly-instruments"></div>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
