@@ -73,7 +73,7 @@ export default async (req: Request, context: Context) => {
 
   const requestDepositData = {
     websiteId: REBILLY_WEBSITE_ID,
-    CUSTOMER_ID,
+    customerId: CUSTOMER_ID,
     currency: "USD",
     amounts: [50, 100],
   };
