@@ -6,6 +6,7 @@ const REBILLY_API_SECRET_KEY = "sk_sandbox_lNFYj-AUBEko3QZ-s4XSaUMwPUMQiXfJ4fs8v
 const REBILLY_WEBSITE_ID = "www.luckyclovercasino.com";
 const REBILLY_ORGANIZATION_ID = "phronesis-lucky-clover-casino";
 const CUSTOMER_ID = "cus_01JPMQYSZZV8X6SQCWS27D3KCX";
+const DEPOSIT_STRATEGY_ID = "dep_str_01JQEMWX4SJHBAMRMSP5REWWDF";
 
 const rebilly = RebillyAPI({
   sandbox: true,
@@ -74,8 +75,7 @@ export default async (req: Request, context: Context) => {
   const requestDepositData = {
     websiteId: REBILLY_WEBSITE_ID,
     customerId: CUSTOMER_ID,
-    currency: "USD",
-    amounts: [50, 100],
+    strategyId: DEPOSIT_STRATEGY_ID,
   };
 
   const { fields: depositFields } = await rebilly.depositRequests.create({

@@ -7,7 +7,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
 <template>
   <v-container>
     <h1 class="font-weight-bold mb-2">
-      Debrief Report #2
+      Debrief Report #11
     </h1>
     <p class="text-subtitle-1 mb-4">
       Summarizing key findings
@@ -19,7 +19,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       Title
     </h2>
     <p class="mb-4">
-      Create invoice retry
+      Casino deposit page
     </p>
 
     <h2 class="font-weight-medium">
