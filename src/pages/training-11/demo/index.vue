@@ -45,7 +45,7 @@ import RebillyInstruments from '@rebilly/instruments';
           <v-col>
             <div
               id="app"
-              class="justify-center"
+              class="d-flex flex-column align-center"
             >
               <div class="rebilly-instruments-summary" />
               <div class="rebilly-instruments" />
