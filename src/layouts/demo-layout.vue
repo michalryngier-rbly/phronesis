@@ -2,9 +2,11 @@
 </script>
 
 <template>
-  <v-app id="demo">
-    <v-app-bar class="header">
-      <v-toolbar-title>Lucky Clover Casino</v-toolbar-title>
+  <v-app>
+    <v-app-bar class="bg-primary text-secondary d-flex justify-center">
+      <v-toolbar-title class="ma-0 text-center font-weight-black">
+        LUCKY CLOVER CASINO
+      </v-toolbar-title>
     </v-app-bar>
     <v-main class="main">
       <v-container>
@@ -20,15 +22,4 @@
   color: #FFD700 !important;
   padding: 10px;
 }
-
-.main {
-  background: #008F39 !important;
-  color: #FFD700 !important;
-  padding: 10px;
-  height: 100%;
-}
-</style>
-
-<style scoped lang="scss">
-
 </style>

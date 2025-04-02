@@ -35,50 +35,21 @@ import RebillyInstruments from '@rebilly/instruments';
 </script>
 
 <template>
-  <v-app>
-    <v-app-bar class="header">
-      <v-toolbar-title>Lucky Clover Casino</v-toolbar-title>
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <v-row>
-          <v-col>
-            <div
-              id="app"
-              class="d-flex flex-column align-center"
-            >
-              <div class="rebilly-instruments-summary" />
-              <div class="rebilly-instruments" />
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+  <v-row>
+    <v-col>
+      <div
+        id="app"
+        class="d-flex flex-column align-center"
+      >
+        <div class="rebilly-instruments-summary" />
+        <div class="rebilly-instruments" />
+      </div>
+    </v-col>
+  </v-row>
 </template>
 
 <style scoped lang="scss">
 .rebilly-instruments-button {
   background: #008F39;
-}
-
-.header {
-  background: #4A2E00 !important;
-  color: #FFD700 !important;
-  padding: 10px;
-}
-
-.body {
-  background: #008F39 !important;
-  color: #FFD700 !important;
-  padding: 10px;
-  height: 100%;
-}
-
-div {
-  &.v-toolbar__content {
-    background: #008F39;
-    color: #FFD700;
-  }
 }
 </style>
