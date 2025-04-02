@@ -58,9 +58,8 @@ import RebillyInstruments from '@rebilly/instruments';
 </template>
 
 <style>
-.header {
-  background: #008F39 !important;
-  color: #FFD700 !important;
-  padding: 10px;
+div.v-toolbar__content {
+  background: #008F39;
+  color: #FFD700;
 }
 </style>
