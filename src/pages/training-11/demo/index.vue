@@ -34,14 +34,6 @@ import RebillyInstruments from '@rebilly/instruments';
 })();
 </script>
 
-<style>
-.header {
-  background: #008F39 !important;
-  color: #FFD700 !important;
-  padding: 10px;
-}
-</style>
-
 <template>
   <v-app>
     <v-app-bar class="header">
@@ -50,10 +42,13 @@ import RebillyInstruments from '@rebilly/instruments';
     <v-main>
       <v-container>
         <v-row>
-          <v-col class="justify-center">
-            <div id="app">
-              <div class="rebilly-instruments-summary"></div>
-              <div class="rebilly-instruments"></div>
+          <v-col>
+            <div
+              id="app"
+              class="justify-center"
+            >
+              <div class="rebilly-instruments-summary" />
+              <div class="rebilly-instruments" />
             </div>
           </v-col>
         </v-row>
@@ -61,3 +56,11 @@ import RebillyInstruments from '@rebilly/instruments';
     </v-main>
   </v-app>
 </template>
+
+<style>
+.header {
+  background: #008F39 !important;
+  color: #FFD700 !important;
+  padding: 10px;
+}
+</style>
