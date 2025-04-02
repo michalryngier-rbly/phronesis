@@ -39,7 +39,7 @@ export default createVuetify({
           primary: '#00A650',
           secondary: '#FFD700',
           accent: '#008F39',
-          background: '#1B1B1B',
+          background: '#002B16',
           surface: '#242424',
           error: '#CF6679',
           info: '#64B5F6',

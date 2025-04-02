@@ -9,7 +9,9 @@ import RebillyInstruments from '@rebilly/instruments';
       Accept: "application/json",
     },
   });
+
   const {token, depositRequestId} = await response.json();
+
   console.log({token, depositRequestId});
   // Mount Rebilly Instruments
   RebillyInstruments.mount({
@@ -37,10 +39,7 @@ import RebillyInstruments from '@rebilly/instruments';
 <template>
   <v-row>
     <v-col>
-      <div
-        id="app"
-        class="d-flex flex-column align-center"
-      >
+      <div class="deposit-form deposit-form d-flex flex-column align-center">
         <div class="rebilly-instruments-summary" />
         <div class="rebilly-instruments" />
       </div>
@@ -49,7 +48,45 @@ import RebillyInstruments from '@rebilly/instruments';
 </template>
 
 <style scoped lang="scss">
+.deposit-form {
+  .rebilly-instruments-summary,
+  .rebilly-instruments,
+  .rebilly-instruments-loader {
+    width: 100%;
+  }
+
+  .rebilly-instruments-summary {
+    border-radius: 4px;
+  }
+}
+</style>
+
+<style lang="scss">
+#rebilly-instruments-app {
+  background: transparent !important;
+  padding: 8px !important;
+}
+
 .rebilly-instruments-button {
   background: #008F39;
+}
+
+.rebilly-instruments {
+  .rebilly-instruments-content {
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .form {
+      border-radius: 2px;
+      padding: 4px;
+    }
+  }
+}
+
+.rebilly-instruments-summary {
+  .rebilly-instruments-iframe {
+    border-radius: 4px;
+  }
 }
 </style>

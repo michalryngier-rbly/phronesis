@@ -17,9 +17,4 @@
 </template>
 
 <style scoped lang="scss">
-.header {
-  background: #4A2E00 !important;
-  color: #FFD700 !important;
-  padding: 10px;
-}
 </style>

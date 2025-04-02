@@ -2,7 +2,8 @@ import type {RouteRecordRaw} from "vue-router";
 
 const meta = {
   'demo': {
-    layout: 'demo'
+    layout: 'demo',
+    theme: 'dark'
   }
 }
 
