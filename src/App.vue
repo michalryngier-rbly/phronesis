@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-//
+
 </script>
 
 <template>
   <v-app>
-    <router-view />
+    <RouterView />
   </v-app>
 </template>

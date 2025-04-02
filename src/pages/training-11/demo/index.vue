@@ -9,8 +9,8 @@ import RebillyInstruments from '@rebilly/instruments';
       Accept: "application/json",
     },
   });
-  const { token, depositRequestId } = await response.json();
-  console.log({ token, depositRequestId });
+  const {token, depositRequestId} = await response.json();
+  console.log({token, depositRequestId});
   // Mount Rebilly Instruments
   RebillyInstruments.mount({
     apiMode: "sandbox",
@@ -57,9 +57,28 @@ import RebillyInstruments from '@rebilly/instruments';
   </v-app>
 </template>
 
-<style>
-div.v-toolbar__content {
+<style scoped lang="scss">
+.rebilly-instruments-button {
   background: #008F39;
-  color: #FFD700;
+}
+
+.header {
+  background: #4A2E00 !important;
+  color: #FFD700 !important;
+  padding: 10px;
+}
+
+.body {
+  background: #008F39 !important;
+  color: #FFD700 !important;
+  padding: 10px;
+  height: 100%;
+}
+
+div {
+  &.v-toolbar__content {
+    background: #008F39;
+    color: #FFD700;
+  }
 }
 </style>

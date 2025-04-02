@@ -1,50 +1,16 @@
-<script lang="ts" setup>
-const route = useRoute();
+<script setup lang="ts">
 
-const breadcrumbs = computed(() => {
-  const pathSegments = route.path.split("/").filter(Boolean);
-  let pathAccumulator = "";
-
-  return [
-    {title: "Home", href: "/", disabled: route.path === "/"},
-
-    ...pathSegments.map((segment, index) => {
-      const segmentTitle = segment.replace('-', ' ');
-      pathAccumulator += `/${segment}`;
-
-      return {
-        title: segmentTitle.charAt(0).toUpperCase() + segmentTitle.slice(1),
-        href: pathAccumulator,
-        disabled: index === pathSegments.length - 1,
-      };
-    }),
-  ]
-});
+import {useRoute} from 'vue-router'
+import DemoLayout from '@/layouts/demo-layout.vue';
+import AppLayout from '@/layouts/app-layout.vue';
 
 </script>
 
 <template>
-  <v-app id="inspire">
-    <v-app-bar color="primary">
-      <v-app-bar-title>Phronesis Michal & Anton</v-app-bar-title>
-
-      <v-spacer />
-
-      <v-btn
-        to="/"
-        icon="mdi-home"
-      />
-    </v-app-bar>
-
-    <v-main>
-      <v-breadcrumbs
-        :items="breadcrumbs"
-        divider="/"
-      />
-
-      <v-container>
-        <RouterView />
-      </v-container>
-    </v-main>
-  </v-app>
+  <component :is="useRoute().meta?.layout === 'demo' ? DemoLayout : AppLayout">
+    <slot />
+  </component>
 </template>
+
+<style scoped lang="scss">
+</style>

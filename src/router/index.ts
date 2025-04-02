@@ -13,7 +13,7 @@ const demos = [{
   path: '/training-11/demo',
   name: 'demo',
   component: () => import('@/pages/training-11/demo/index.vue'),
-  meta: { layout: 'demo' },
+  meta: { layout: 'demo'},
 }];
 
 const router = createRouter({
