@@ -18,6 +18,11 @@ import RebillyInstruments from '@rebilly/instruments';
       depositRequestId,
     },
     jwt: token,
+    theme: {
+      colorPrimary: '#008F39',
+      colorText: '#FFD700',
+      colorBackground: '#4A2E00'
+    }
   });
   // Optional
   RebillyInstruments.on("instrument-ready", (instrument) => {
@@ -30,18 +35,14 @@ import RebillyInstruments from '@rebilly/instruments';
 </script>
 
 <style>
-.rebilly-instruments-button {
-  background: #008F39;
-}
-
 .header {
-  background: #4A2E00 !important;
+  background: #008F39 !important;
   color: #FFD700 !important;
   padding: 10px;
 }
 
 .body {
-  background: #008F39 !important;
+  background: #4A2E00 !important;
   color: #FFD700 !important;
   padding: 10px;
   height: 100%;
