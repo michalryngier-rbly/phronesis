@@ -6,7 +6,6 @@ const REBILLY_API_SECRET_KEY = "sk_sandbox_lNFYj-AUBEko3QZ-s4XSaUMwPUMQiXfJ4fs8v
 const REBILLY_WEBSITE_ID = "www.luckyclovercasino.com";
 const REBILLY_ORGANIZATION_ID = "phronesis-lucky-clover-casino";
 const CUSTOMER_ID = "cus_01JPMQYSZZV8X6SQCWS27D3KCX";
-const DEPOSIT_STRATEGY_ID = "dep_str_01JQEMWX4SJHBAMRMSP5REWWDF";
 
 const rebilly = RebillyAPI({
   sandbox: true,
@@ -16,9 +15,18 @@ const rebilly = RebillyAPI({
 });
 
 export default async (req: Request, context: Context) => {
+  if (req.method === 'OPTIONS') {
+    const response =  new Response(null, { status: 204 });
+    response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+    response.headers.append('Access-Control-Allow-Methods', 'POST');
+    response.headers.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    response.headers.append('Access-Control-Allow-Credentials', 'true');
+    return response;
+  }
+
   const response: {
     token?: string,
-    depositRequestId?: string
+    payoutRequestId?: string
   } = {};
 
   const data = {
@@ -41,28 +49,17 @@ export default async (req: Request, context: Context) => {
             },
             permissions: [
               "PostToken",
-              "PostDigitalWalletValidation",
-              "StorefrontGetAccount",
-              "StorefrontPatchAccount",
-              "StorefrontPostPayment",
-              "StorefrontGetTransactionCollection",
-              "StorefrontGetTransaction",
               "StorefrontGetPaymentInstrumentCollection",
               "StorefrontPostPaymentInstrument",
               "StorefrontGetPaymentInstrument",
               "StorefrontPatchPaymentInstrument",
-              "StorefrontPostPaymentInstrumentDeactivation",
+              "StorefrontGetAccount",
               "StorefrontGetWebsite",
-              "StorefrontGetInvoiceCollection",
-              "StorefrontGetInvoice",
-              "StorefrontGetProductCollection",
-              "StorefrontGetProduct",
               "StorefrontPostReadyToPay",
-              "StorefrontGetPaymentInstrumentSetup",
-              "StorefrontPostPaymentInstrumentSetup",
-              "StorefrontGetDepositRequest",
-              "StorefrontGetDepositStrategy",
-              "StorefrontPostDeposit",
+              "StorefrontGetPayoutRequestCollection",
+              "StorefrontGetPayoutRequest",
+              "StorefrontPatchPayoutRequest",
+              "StorefrontPostReadyToPayout",
             ],
           },
         ],
@@ -72,19 +69,31 @@ export default async (req: Request, context: Context) => {
       },
     });
 
-  const requestDepositData = {
+  const body: string = await new Response(req.body).text();
+  console.log(body);
+  const { amount } = JSON.parse(body);
+
+  console.log(amount);
+
+  const requestPayoutData = {
     websiteId: REBILLY_WEBSITE_ID,
     customerId: CUSTOMER_ID,
-    strategyId: DEPOSIT_STRATEGY_ID,
     currency: "USD",
+    amount
   };
 
-  const { fields: depositFields } = await rebilly.depositRequests.create({
-    data: requestDepositData,
+  const { fields: payoutRequest } = await rebilly.payoutRequests.create({
+    data: requestPayoutData,
   });
 
   response.token = exchangeToken.token;
-  response.depositRequestId = depositFields.id;
+  response.payoutRequestId = payoutRequest.id;
 
-  return new Response(JSON.stringify(response))
+  const responseObj = new Response(JSON.stringify(response));
+
+  responseObj.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+  responseObj.headers.append('Access-Control-Allow-Methods', 'POST');
+  responseObj.headers.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  responseObj.headers.append('Access-Control-Allow-Credentials', 'true');
+  return responseObj;
 }

@@ -1,18 +1,24 @@
 <script lang="ts" setup>
 import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
 
-(async () => {
-  const response = await fetch("/.netlify/functions/deposit", {
-    method: "GET",
+const selectedAmount = ref(0);
+const amountRule = ref([
+  (v) => !!v || 'Amount is required',
+  (v) => v > 0 || 'Amount must be greater than 0',
+]);
+async function payout(amount) {
+  const response = await fetch("/.netlify/functions/payout", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
+    body: JSON.stringify({
+      amount,
+    }),
   });
 
-  const {token, depositRequestId} = await response.json();
-
-  console.log({token, depositRequestId});
+  const {token, payoutRequestId} = await response.json();
 
   const theme: ThemeProperties = {
     colorPrimary: '#008F39',
@@ -27,16 +33,15 @@ import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
     colorSuccessMuted: '#008F39'
   }
 
+  console.log({token, payoutRequestId});
   // Mount Rebilly Instruments
   RebillyInstruments.mount({
     apiMode: "sandbox",
-    deposit: {
-      depositRequestId,
+    payout: {
+      payoutRequestId,
     },
     jwt: token,
-    css: '.rebilly-instruments-amount-selector { background: #002B16; }' +
-      '.rebilly-instruments-form-field-label { color: #FFD700 }',
-    theme: rebillyTheme
+    theme
   });
   // Optional
   RebillyInstruments.on("instrument-ready", (instrument) => {
@@ -45,13 +50,27 @@ import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
   RebillyInstruments.on("purchase-completed", (purchase) => {
     console.info("purchase-completed", purchase);
   });
-})();
+};
 </script>
 
 <template>
   <v-row>
+    <v-col cols="12" class="text-center">
+      <v-form @submit="payout(selectedAmount)" @submit.prevent>
+        <v-text-field
+          v-model="selectedAmount"
+          label="Amount"
+          type="number"
+          :rules="amountRule"
+          required
+        ></v-text-field>
+        <v-btn type="submit" block>Withdraw</v-btn>
+      </v-form>
+    </v-col>
+  </v-row>
+  <v-row>
     <v-col>
-      <div class="deposit-form d-flex flex-column align-center">
+      <div class="payout-form d-flex flex-column align-center">
         <div class="rebilly-instruments-summary" />
         <div class="rebilly-instruments" />
       </div>
@@ -60,7 +79,7 @@ import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
 </template>
 
 <style scoped lang="scss">
-.deposit-form {
+.payout-form {
   .rebilly-instruments-summary,
   .rebilly-instruments,
   .rebilly-instruments-loader {
@@ -74,16 +93,20 @@ import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
 </style>
 
 <style lang="scss">
-//#rebilly-instruments-app {
-//  background: transparent !important;
-//  padding: 8px !important;
-//}
+#rebilly-instruments-app {
+  background: transparent !important;
+  padding: 8px !important;
+}
+
+.rebilly-instruments-button {
+  background: #008F39;
+}
 
 .rebilly-instruments {
   .rebilly-instruments-content {
     padding: 8px;
     border-radius: 4px;
-    box-shadow: 0 4px 8px 0 #008F39, 0 6px 20px 0 #008F39;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     .form {
       border-radius: 2px;
