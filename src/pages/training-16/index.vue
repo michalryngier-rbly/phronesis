@@ -46,7 +46,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
         <phronesis-card
           completed
         >
-          <a href="/training-16/demo">Link to demo</a>
+          <a href="/casino/withdraw">Link to casino</a>
         </phronesis-card>
       </v-col>
 
@@ -60,6 +60,22 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           <image-dialog
             image-src="trainings/16/payout-double.png"
           />
+        </phronesis-card>
+      </v-col>
+
+      <v-col cols="12">
+        <phronesis-card
+          confusing
+          title="Using Rebilly Instruments"
+        >
+          <p>
+            Not all CSS variables configurable in <v-code>ThemeProperties</v-code> interface have an effect on the form. For example, <v-code>buttonSecondaryBorder</v-code> is used
+            for secondary button border styling, but other variables, such as <v-code>buttonSecondaryBorderColor</v-code>, have no effect on the style. Documentation does not mention them, but they are available in the
+            TS interface, which is the first thing developers look at when they figure out how to use the library.</p>
+          <p>
+            Furthermore, there are some common classes we'd like to style using TS and not CSS (for example, <v-code>.rebilly-instruments-amount-selector</v-code>), as well as <v-code>&lt;a&gt;</v-code>.
+            <v-code>colorBackground</v-code> has no effect on the class.
+          </p>
         </phronesis-card>
       </v-col>
     </v-row>

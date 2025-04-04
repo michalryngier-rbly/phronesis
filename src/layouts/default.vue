@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 import {useRoute} from 'vue-router'
-import DemoLayout from '@/layouts/demo-layout.vue';
 import AppLayout from '@/layouts/app-layout.vue';
+import CasinoLayout from '@/layouts/casino-layout.vue';
 import { useTheme } from 'vuetify'
 
 const theme = useTheme();
@@ -14,10 +14,20 @@ const routeTheme = computed(() => {
 
 const routeLayout = computed(() => {
   const layout = useRoute().meta?.layout;
-  return layout === 'demo' ? DemoLayout : AppLayout;
+  switch (layout) {
+    case 'casino':
+      return CasinoLayout;
+    default:
+      return AppLayout;
+  }
 });
 
-theme.global.name.value = routeTheme.value;
+function setThemeValue() {
+  theme.global.name.value = routeTheme.value;
+};
+
+onUpdated(setThemeValue);
+onMounted(setThemeValue)
 
 </script>
 

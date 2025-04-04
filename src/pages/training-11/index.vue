@@ -45,7 +45,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
         <phronesis-card
           completed
         >
-          <a href="/training-11/demo">Link to demo</a>
+          <a href="/casino/deposit">Link to casino</a>
         </phronesis-card>
       </v-col>
 

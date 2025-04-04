@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
 
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
 (async () => {
-  const response = await fetch("/.netlify/functions/deposit", {
+  const response = await fetch(apiUrl + "/deposit", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -35,8 +37,9 @@ import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
     },
     jwt: token,
     css: '.rebilly-instruments-amount-selector { background: #002B16; }' +
-      '.rebilly-instruments-form-field-label { color: #FFD700 }',
-    theme: rebillyTheme
+      '.rebilly-instruments-form-field-label { color: #FFD700 }' +
+      'a:link { color: #008F39 } a:visited { color: #4A2E00 }',
+    theme: theme
   });
   // Optional
   RebillyInstruments.on("instrument-ready", (instrument) => {

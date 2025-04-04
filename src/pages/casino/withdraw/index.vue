@@ -1,13 +1,15 @@
 <script lang="ts" setup>
 import RebillyInstruments, {type ThemeProperties} from '@rebilly/instruments';
 
-const selectedAmount = ref(0);
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+const selectedAmount = ref(10);
 const amountRule = ref([
   (v) => !!v || 'Amount is required',
   (v) => v > 0 || 'Amount must be greater than 0',
 ]);
 async function payout(amount) {
-  const response = await fetch("/.netlify/functions/payout", {
+  const response = await fetch(apiUrl + "/payout", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,6 +30,7 @@ async function payout(amount) {
     buttonColorBackground: '#008F39',
     buttonColorText: '#FFD700',
     buttonSecondaryBorder: '1px solid #4A2E00',
+    buttonSecondaryBorderColor: '#FFD700',
     inputBorder: '1px solid #4A2E00',
     colorSuccessDark: '#002B16',
     colorSuccessMuted: '#008F39'
@@ -41,6 +44,7 @@ async function payout(amount) {
       payoutRequestId,
     },
     jwt: token,
+    css: 'a:link { color: #008F39 } a:visited { color: #4A2E00 }',
     theme
   });
   // Optional
@@ -54,17 +58,28 @@ async function payout(amount) {
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12" class="text-center">
-      <v-form @submit="payout(selectedAmount)" @submit.prevent>
+  <v-row class="justify-center">
+    <v-col
+      cols="6"
+      class="text-center"
+    >
+      <v-form
+        @submit="payout(selectedAmount)"
+        @submit.prevent
+      >
         <v-text-field
           v-model="selectedAmount"
           label="Amount"
           type="number"
           :rules="amountRule"
           required
-        ></v-text-field>
-        <v-btn type="submit" block>Withdraw</v-btn>
+        />
+        <v-btn
+          type="submit"
+          block
+        >
+          Withdraw
+        </v-btn>
       </v-form>
     </v-col>
   </v-row>

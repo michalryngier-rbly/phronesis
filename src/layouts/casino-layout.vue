@@ -55,6 +55,7 @@
         flat
         prepend-icon="mdi-cash-100"
         text="Deposit"
+        to="/casino/deposit"
       />
 
       <v-btn
@@ -63,6 +64,16 @@
         flat
         prepend-icon="mdi-cash-fast"
         text="Withdraw"
+        to="/casino/withdraw"
+      />
+
+      <v-btn
+        color="secondary"
+        size="large"
+        flat
+        prepend-icon="mdi-backburger"
+        text="Phronesis"
+        to="/"
       />
 
       <v-btn
@@ -158,5 +169,10 @@
   right: -12px;
   top: 4px;
   width: 350px;
+}
+
+a.v-btn--active {
+  background-color: rgb(var(--v-theme-secondary)) !important;
+  color: rgb(var(--v-theme-primary)) !important;
 }
 </style>

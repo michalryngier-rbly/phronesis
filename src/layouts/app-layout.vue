@@ -30,6 +30,11 @@ const breadcrumbs = computed(() => {
 
       <v-spacer />
 
+
+      <v-btn
+        to="/casino/home"
+        icon="mdi-cash-fast"
+      />
       <v-btn
         to="/"
         icon="mdi-home"
