@@ -1,5 +1,14 @@
 <script setup lang="ts">
-defineProps<{ imageSrc: string }>();
+defineProps({
+  imageSrc: {
+    type: String,
+    required: true,
+  },
+  maxWidth: {
+    type: String,
+    default: "90",
+  },
+});
 
 const getImageUrl = (name: string) => {
   return new URL(`../assets/${name}`, import.meta.url).href
@@ -18,7 +27,7 @@ const getImageUrl = (name: string) => {
           v-bind="activatorProps"
           :src="getImageUrl(imageSrc)"
           class="rounded-lg mt-2 elevation-2 hoverable"
-          max-width="80%"
+          :max-width="maxWidth + '%'"
         />
       </div>
     </template>
