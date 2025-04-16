@@ -42,6 +42,18 @@ export const TRAININGS = [
     route: 'training-19',
   },
   {
+    id: '23',
+    title: 'Phronesis training #23',
+    description: 'Implementation of Phronesis training #23 - Integrate Checkout.com gateway',
+    route: 'training-23',
+  },
+  {
+    id: '25',
+    title: 'Phronesis training #25',
+    description: 'Implementation of Phronesis training #15 - Integrate Checkout.com dispute notifications',
+    route: 'training-25',
+  },
+  {
     id: '31',
     title: 'Phronesis training #31',
     description: 'Implementation of Phronesis training #31 - Orders Early Access',
