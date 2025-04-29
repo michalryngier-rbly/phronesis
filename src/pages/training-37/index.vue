@@ -56,9 +56,34 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       <v-col cols="12">
         <phronesis-card
           confusing
-          title="..."
+          title="Something went wrong"
         >
-          ...
+          <v-row>
+            <v-col class="align-content-center">
+              Go to Apps -> QuickBooks:
+            </v-col>
+            <v-col class="text-center align-content-center">
+              Results in:
+            </v-col>
+            <v-col class="align-content-center">
+              <v-card
+                color="red-lighten-5"
+                border="md"
+              >
+                <v-card-text>
+                  Something went wrong, please try again or contact support.
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col class="align-content-center">
+              Nothing seems to be wrong, there's no error visible in inspector.
+            </v-col>
+            <v-col>
+              <image-dialog
+                image-src="trainings/37/something-went-wrong.png"
+              />
+            </v-col>
+          </v-row>
         </phronesis-card>
       </v-col>
     </v-row>
