@@ -26,7 +26,7 @@ const breadcrumbs = computed(() => {
 <template>
   <v-app id="inspire">
     <v-app-bar color="primary">
-      <v-app-bar-title>Phronesis Michal & Anton</v-app-bar-title>
+      <v-app-bar-title>Phronesis Casino la Blanca</v-app-bar-title>
 
       <v-spacer />
 
