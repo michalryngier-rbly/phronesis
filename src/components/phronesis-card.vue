@@ -7,6 +7,7 @@ defineProps<{
   completed?: boolean
   title?: string
   suggestion?: boolean
+  docs?: boolean
 }>()
 </script>
 
@@ -16,7 +17,7 @@ defineProps<{
     rounded
   >
     <v-card-title
-      v-if="confusing || issue || completed || title || suggestion"
+      v-if="confusing || issue || completed || title || suggestion || docs"
       class="d-flex mb-2 bg-grey-lighten-4"
     >
       <pill
@@ -49,6 +50,14 @@ defineProps<{
         icon="mdi-check"
       >
         Completed
+      </pill>
+
+      <pill
+        v-if="docs"
+        bg-color="info"
+        icon="mdi-file-document-multiple-outline"
+      >
+        Docs
       </pill>
 
       <div class="ml-2">

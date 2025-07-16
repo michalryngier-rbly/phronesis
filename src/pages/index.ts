@@ -100,5 +100,11 @@ export const TRAININGS = [
     title: 'Phronesis training #47',
     description: 'Implementation of Project 47: Marketing emails',
     route: 'training-47',
+  },
+  {
+    id: '48',
+    title: 'Phronesis training #48',
+    description: 'Implementation of Project 48: Custom webhooks',
+    route: 'training-48',
   }
 ];
