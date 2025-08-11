@@ -32,9 +32,8 @@ import PhronesisCard from "@/components/phronesis-card.vue";
 
       <v-col cols="12">
         <phronesis-card
-          confusing
           issue
-          title="Pause takes a long time to happen"
+          title="Value List collection is not fetched when editing filters"
         >
           Request for /lists is only made when setting condition to one of: is in list, is not in list, is empty or is in list, is empty or is not in list, but there's no request for /lists made when editing existing filters, which results in list not being selectable.
 
