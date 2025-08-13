@@ -44,5 +44,6 @@ declare module 'vue-router/auto-routes' {
     '/training-49/': RouteRecordInfo<'/training-49/', '/training-49', Record<never, never>, Record<never, never>>,
     '/training-50/': RouteRecordInfo<'/training-50/', '/training-50', Record<never, never>, Record<never, never>>,
     '/training-51/': RouteRecordInfo<'/training-51/', '/training-51', Record<never, never>, Record<never, never>>,
+    '/training-52/': RouteRecordInfo<'/training-52/', '/training-52', Record<never, never>, Record<never, never>>,
   }
 }
