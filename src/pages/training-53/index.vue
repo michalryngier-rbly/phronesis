@@ -69,7 +69,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           date is still displayed after reopening it.
 
           <p>To reproduce</p>
-          <ol>
+          <ol class="ml-6">
             <li>Go to Customer with active subscription with trial</li>
             <li>Click on Active subscription -> View</li>
             <li>Click on 'Change trial end date'</li>
