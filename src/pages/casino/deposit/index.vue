@@ -3,6 +3,8 @@
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
 const currency = ref('USD');
 
+const wrapper = ref<HTMLElement | null>(null);
+
 watch(
   currency,
   () => {
@@ -22,7 +24,13 @@ async function renderDepositForm() {
 
   const data = await response.json();
 
+  if (wrapper.value) {
+    wrapper.value.innerHTML = `<div id="deposit"></div>`;
+  }
+
   const mountElement = document.querySelector("#deposit");
+  console.log(mountElement);
+
   const cashierToken = data.token;
 
   console.log({cashierToken});
@@ -42,7 +50,7 @@ async function renderDepositForm() {
   <v-row>
     <v-col>
       <div class="deposit-form d-flex flex-column align-center">
-        <div id="deposit" />
+        <div ref="wrapper" />
       </div>
 
       <v-select
