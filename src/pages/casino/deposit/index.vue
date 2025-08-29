@@ -57,4 +57,7 @@ const apiUrl = import.meta.env.VITE_API_BASE_URL;
 .r-button {
   background: #f5f5f5;
 }
+:root {
+  --r-primary: #0044d4;
+}
 </style>
