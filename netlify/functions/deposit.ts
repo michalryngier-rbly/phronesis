@@ -26,14 +26,16 @@ export default async (req: Request, context: Context) => {
     token?: string,
   } = {};
 
-  console.log(req, context);
+  const currency = new URL(req.url).searchParams.get('currency');
+
+  console.log(currency);
 
   try {
     const cachierResponse = await rebilly.cashiers.create({
       data: {
         websiteId: WEBSITE_ID,
         customerId: "cus_01K3TEGEH60DD2DTXDFKSMG6HN",
-        currency: context.params.currency,
+        currency: currency,
       },
     });
 
