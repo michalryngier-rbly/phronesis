@@ -40,20 +40,6 @@ const apiUrl = import.meta.env.VITE_API_BASE_URL;
 </template>
 
 <style scoped lang="scss">
-.deposit-form {
-  .rebilly-instruments-summary,
-  .rebilly-instruments,
-  .rebilly-instruments-loader {
-    width: 100%;
-  }
-
-  .rebilly-instruments-summary {
-    border-radius: 4px;
-  }
-}
-</style>
-
-<style lang="scss">
 .r-button {
   background: #f5f5f5;
 }
