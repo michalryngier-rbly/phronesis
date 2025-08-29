@@ -1,9 +1,18 @@
 <script lang="ts" setup>
 
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
+const currency = ref('USD');
 
-(async () => {
-  const response = await fetch(apiUrl + "/deposit", {
+watch(
+  currency,
+  () => {
+    renderDepositForm();
+  },
+  {immediate: true},
+);
+
+async function renderDepositForm() {
+  const response = await fetch(apiUrl + `/deposit?currency=${currency.value}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -26,7 +35,7 @@ const apiUrl = import.meta.env.VITE_API_BASE_URL;
   } else {
     console.error("RebillyCashier library not loaded");
   }
-})();
+}
 </script>
 
 <template>
@@ -35,6 +44,12 @@ const apiUrl = import.meta.env.VITE_API_BASE_URL;
       <div class="deposit-form d-flex flex-column align-center">
         <div id="deposit" />
       </div>
+
+      <v-select
+        v-model="currency"
+        label="Select"
+        :items="['USD', 'CAD', 'GBP']"
+      />
     </v-col>
   </v-row>
 </template>
@@ -43,6 +58,7 @@ const apiUrl = import.meta.env.VITE_API_BASE_URL;
 .r-button {
   background: #f5f5f5;
 }
+
 :root {
   --r-primary: #0044d4;
 }

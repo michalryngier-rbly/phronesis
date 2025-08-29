@@ -31,7 +31,7 @@ export default async (req: Request, context: Context) => {
       data: {
         websiteId: WEBSITE_ID,
         customerId: "cus_01K3TEGEH60DD2DTXDFKSMG6HN",
-        currency: "USD",
+        currency: context.params.currency,
       },
     });
 
