@@ -26,6 +26,8 @@ export default async (req: Request, context: Context) => {
     token?: string,
   } = {};
 
+  console.log(req, context);
+
   try {
     const cachierResponse = await rebilly.cashiers.create({
       data: {
