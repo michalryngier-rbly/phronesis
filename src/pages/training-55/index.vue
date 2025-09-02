@@ -25,7 +25,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
         <phronesis-card title="What made us smile 😄">
           <ul class="ml-3">
             <li>
-              New pairs
+              New pairs 🙌
             </li>
           </ul>
         </phronesis-card>
