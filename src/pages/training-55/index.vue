@@ -14,7 +14,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       Description
     </h2>
     <p>
-      <a href="https://team.rebilly.dev/phronesis-training/projects/free-trials">Project 55: Google Sheets
+      <a href="https://team.rebilly.dev/phronesis-training/projects/google-sheets-revisited">Project 55: Google Sheets
         (revisited)</a>
     </p>
 
