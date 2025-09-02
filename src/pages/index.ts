@@ -143,4 +143,10 @@ export const TRAININGS = [
     description: 'Implementation of Project 54: Deposits (third time)',
     route: 'training-54',
   },
-];
+  {
+    id: '55',
+    title: 'Phronesis training #55',
+    description: 'Implementation of Project 55: Google Sheets (revisited)',
+    route: 'training-55',
+  },
+].reverse();
