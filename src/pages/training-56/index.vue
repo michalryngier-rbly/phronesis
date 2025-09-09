@@ -35,7 +35,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           title="Last Name Required - shows for any invalid field"
           issue
         >
-          The 'Last name is required' error message displays when any field validation is triggered during registration
+          The 'Last name is required' error message displays when Region or Postal code fields validation is triggered during registration
           or editing the profile.
 
           <image-dialog
@@ -92,7 +92,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           title="Button styling issues"
           issue
         >
-          Button styling is missing appropriate padding and margin.
+          Button styling is missing appropriate padding or margin.
 
           <image-dialog
             image-src="trainings/56/button-styling.png"
