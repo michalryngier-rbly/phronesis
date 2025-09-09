@@ -57,11 +57,11 @@ import PhronesisCard from "@/components/phronesis-card.vue";
 
       <v-col cols="12">
         <phronesis-card
-          title="Race condition in Ffvorite payment methods"
+          title="Race condition in Favorite payment methods"
           issue
         >
           There is a race condition when displaying favorite payment methods - sometimes they are ordered by the last
-          successful ones, and other times the order appears random. I this case our last successful method was
+          successful ones, and other times the order appears random. In this case our last successful method was
           Cryptocurrency, but we got a Payment Card on the top instead.
 
           <image-dialog
