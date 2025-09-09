@@ -149,4 +149,10 @@ export const TRAININGS = [
     description: 'Implementation of Project 55: Google Sheets (revisited)',
     route: 'training-55',
   },
+  {
+    id: '56',
+    title: 'Phronesis training #56',
+    description: 'Implementation of Project 56: Casino Demo Training',
+    route: 'training-56',
+  },
 ].reverse();
