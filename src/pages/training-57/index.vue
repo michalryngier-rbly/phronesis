@@ -26,7 +26,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
         <phronesis-card title="What made us smile 😄">
           <ul class="ml-3">
             <li>
-              Trying to break the journal record amount inputs, making transactions of 10 trillions 😶‍🌫️
+              Trying to break the journal record amount inputs, making transactions of 10 trillion 😶‍🌫️
             </li>
           </ul>
         </phronesis-card>
@@ -99,7 +99,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
       </v-col>
       <v-col cols="12">
         <phronesis-card
-          title="Refunding a ont-time sale"
+          title="Refunding a one-time sale"
           confusing
         >
           What should we expect to see in the journals when refunding a one-time sale?
@@ -116,7 +116,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
           title="Journal record amounts validation"
           issue
         >
-          The validation field for the estimated and recognized amount trigger a validation error for amounts less than 1
+          The validation fields for the estimated and recognized amount trigger a validation error for amounts less than 1
 
           <p>
             Amounts lesser than 1 however do exist and can be created with the automatic journal entries
@@ -163,8 +163,11 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
           title="Add export settings to the journal summary export"
           suggestion
         >
-          Can we include the export settings (account, currency, etc.) into the table or file name? With a couple exports it gets confusing
-
+          Can we include the export settings (account, amount, currency, etc.) into the table or the file name? With a couple exports it gets confusing.<br>
+          For example:<br>
+          <v-code>journal-summary-report-2025-08-2025-12-debit-estimated-USD.csv</v-code><br>
+          And when only one account is present:<br>
+          <v-code>journal-summary-report-2025-08-2025-12-debit-recognized-USD-Revenue-Roulette.csv</v-code>
 
           <image-dialog
             image-src="trainings/57/journalsummaryreport.png"
@@ -227,7 +230,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
           title="Discrepancies between export and Recomm's column names"
           confusing
         >
-          Column names are inconsistent between the export and recomm's UI
+          Column names are inconsistent between the export and Recomm's UI
 
 
           <image-dialog
@@ -349,7 +352,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
       </v-col>
       <v-col cols="12">
         <phronesis-card
-          title=""
+          title="Links in the journal summary report"
           suggestion
         >
           In the journal summary reporting, adding links to the table cells would make investigating easier and nicer. Examples :
