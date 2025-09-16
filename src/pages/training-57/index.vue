@@ -341,7 +341,7 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
 
           <p class="pt-2">
             The goal would be to aggregate most journal accounts and reporting in a place, because at the moment journal reporting features are scattered throughout the application (settings, products, data tables) with few links to each other.
-            Having as many features and links to the other parts of the journal reporting as possible in the journal account page would make the onboarding smoother, because settings up journals will always start with creating a journal account
+            Having as many features and links to the other parts of the journal reporting as possible in the journal account page would make the onboarding smoother, because setting up journals will always start with creating a journal account
           </p>
 
           <image-dialog
