@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import PhronesisCard from "@/components/phronesis-card.vue";
 
-const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
 </script>
 
 <template>
@@ -88,10 +87,9 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
               51 - 30 and the form saves fine, without issues when updating<br>
             </v-col>
             <v-col cols="6">
-              <video
-                controls
-                class="w-50"
-                :src="toAssetSrc('../../assets/trainings/58/brackets-compared.webm')"
+              <image-dialog
+                max-width="90"
+                image-src="trainings/58/brackets-compared.gif"
               />
             </v-col>
 
@@ -99,10 +97,9 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
               When updating: brackets are compared to the initial value and not their current value
             </v-col>
             <v-col cols="6">
-              <video
-                controls
-                class="w-50"
-                :src="toAssetSrc('../../assets/trainings/58/brackets-compared-2.webm')"
+              <image-dialog
+                max-width="90"
+                image-src="trainings/58/brackets-compared-2.gif"
               />
             </v-col>
           </v-row>
