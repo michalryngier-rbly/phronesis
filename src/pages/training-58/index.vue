@@ -125,10 +125,10 @@ const toAssetSrc = (url: string) => new URL(url, import.meta.url).href
 
       <v-col cols="12">
         <phronesis-card
-          title="Displaying recurring order fields on one-time sales"
+          title="Displaying recurring order fields on one-time-sales"
           confusing
         >
-          Should we display trail and setup fee for one time sale?
+          Should we display trial and setup fee for one-time-sale?
 
           <image-dialog
             image-src="trainings/58/pricing-plan.png"
