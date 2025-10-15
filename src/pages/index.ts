@@ -179,4 +179,10 @@ export const TRAININGS = [
     description: 'Implementation of Project 60: KYC - Closed eyes detection',
     route: 'training-60',
   },
+  {
+    id: '61',
+    title: 'Phronesis training #61',
+    description: 'Implementation of Project 61: KPI Segments',
+    route: 'training-61',
+  },
 ].reverse();
