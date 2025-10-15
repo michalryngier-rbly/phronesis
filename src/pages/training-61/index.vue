@@ -15,7 +15,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       Description
     </h2>
     <p>
-      <a href="https://team.rebilly.dev/phronesis-training/projects/pricing-formulas">Project 61: KPI segments</a>
+      <a href="https://team.rebilly.dev/phronesis-training/projects/kpi-segments">Project 61: KPI segments</a>
     </p>
 
     <v-divider class="mb-4 mt-4"/>
@@ -137,7 +137,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           title="KPI Segments Form Validation"
           issue
         >
-          The frontend validation for the KPI segments forms is not complete
+          The frontend validation for the KPI segments forms is not complete, the error messages are not displayed and we cans till proceed with invalid data
 
           <image-dialog
             image-src="trainings/61/kpiformvalidation.png"
