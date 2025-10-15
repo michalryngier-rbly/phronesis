@@ -9,7 +9,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       Debrief Report #61: KPI segments
     </h1>
 
-    <v-divider class="mb-4"/>
+    <v-divider class="mb-4" />
 
     <h2 class="font-weight-medium">
       Description
@@ -18,7 +18,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       <a href="https://team.rebilly.dev/phronesis-training/projects/kpi-segments">Project 61: KPI segments</a>
     </p>
 
-    <v-divider class="mb-4 mt-4"/>
+    <v-divider class="mb-4 mt-4" />
 
     <v-row>
       <v-col cols="12">
@@ -69,7 +69,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           suggestion
         >
           Overall, the segments selection and form is confusing, with a lot of context switching happening with
-          the "Create segment" button. We believe that this quick UI tweak would slighly help
+          the "Create segment" button. We believe this quick UI tweak would slightly help
           <image-dialog
             image-src="trainings/61/kpiformui.png"
             max-width="30"
@@ -91,7 +91,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           title="Metrics Filtering Issue"
           confusing
         >
-          Some metrics do not seem to be filtered, we have the same numbers for different segments. If it si a global
+          Some metrics do not seem to be filtered, we have the same numbers for different segments. If it is a global
           metric, perhaps we should display only one graph with no label?
           <image-dialog
             image-src="trainings/61/nonfilteredmetrics.png"
@@ -137,7 +137,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           title="KPI Segments Form Validation"
           issue
         >
-          The frontend validation for the KPI segments forms is not complete, the error messages are not displayed and we cans till proceed with invalid data
+          The frontend validation for the KPI segments forms is not complete, the error messages are not displayed and we can still proceed with invalid data
 
           <image-dialog
             image-src="trainings/61/kpiformvalidation.png"
@@ -159,7 +159,6 @@ import PhronesisCard from "@/components/phronesis-card.vue";
           />
         </phronesis-card>
       </v-col>
-
     </v-row>
   </v-container>
 </template>
