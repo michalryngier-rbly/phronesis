@@ -191,4 +191,10 @@ export const TRAININGS = [
     description: 'Implementation of Project 62: Casino deposit error handling',
     route: 'training-62',
   },
+  {
+    id: '63',
+    title: 'Phronesis training #63',
+    description: 'Implementation of Project 63: Allowlists',
+    route: 'training-63',
+  },
 ].reverse();
