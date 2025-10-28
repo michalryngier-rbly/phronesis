@@ -114,7 +114,7 @@ import PhronesisCard from "@/components/phronesis-card.vue";
       <v-col cols="12">
         <phronesis-card
           title="Ambiguity of velocity rule counting"
-          docs
+          confusing
         >
           It is somewhat ambiguous whether the velocities in the risk score rules count in the ongoing transaction during calculations
         </phronesis-card>
